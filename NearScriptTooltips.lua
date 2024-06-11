@@ -107,7 +107,7 @@ local function TooltipHook(tooltipControl, method, linkFunc)
 			ZO_Tooltip_AddDivider(tooltipControl)
 			tooltipControl:AddLine("Applicable to:", font, r, g, b)
 
-			local text = ""
+			local grimoireNames_table = {}
 
 			for craftedAbilityScriptId, value in pairs(craftedAbilityScripts[specializedItemType]) do
 				if (itemId == value.bound or itemId == value.unbound) then
@@ -119,12 +119,17 @@ local function TooltipHook(tooltipControl, method, linkFunc)
 							local craftedAbilityName = GetCraftedAbilityDisplayName(craftedAbilityId)
 							craftedAbilityName = color:Colorize(craftedAbilityName)
 							-- tooltipControl:AddLine(craftedAbilityName, font, r, g, b, lineAnchor, modifyTextType, textAlignment, setToFullSize)
-							text = text .. craftedAbilityName .. "\n"
+							grimoireNames_table[#grimoireNames_table + 1] = craftedAbilityName
 						end
 					end
 				end
 			end
-			tooltipControl:AddLine(text, font, r, g, b, lineAnchor, modifyTextType, textAlignment, setToFullSize)
+
+			-- Sort the names
+			table.sort(grimoireNames_table)
+			local grimoireNames = table.concat(grimoireNames_table, '\n')
+
+			tooltipControl:AddLine(grimoireNames, font, r, g, b, lineAnchor, modifyTextType, textAlignment, setToFullSize)
 		end
 	end
 end
