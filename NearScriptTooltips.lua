@@ -32,7 +32,7 @@ local function TooltipHook(tooltipControl, method, linkFunc)
 
 		if itemType == ITEMTYPE_CRAFTED_ABILITY_SCRIPT then
 			ZO_Tooltip_AddDivider(tooltipControl)
-			tooltipControl:AddLine("Applicable to:", font, r, g, b)
+			tooltipControl:AddLine("Compatible with:", font, r, g, b)
 
     		local craftedAbilityScriptId = GetItemLinkCraftedAbilityScriptId(itemLink)
 
