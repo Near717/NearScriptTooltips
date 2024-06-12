@@ -1,8 +1,8 @@
 ## Title: Near's Script Tooltips
-## Description: Adds list of applicable Grimoires to the script items
+## Description: Adds list of compatible Grimoires to the script items
 ## APIVersion: 101042
-## Version: 1.0.0
-## AddOnVersion: 100
+## Version: 1.0.1
+## AddOnVersion: 101
 ## Author: |cCC99FFnotnear|r
 
 # This Add-on is not created by, affiliated with, or sponsored by, ZeniMax Media Inc. or its affiliates.
