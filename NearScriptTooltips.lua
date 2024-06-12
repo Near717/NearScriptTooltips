@@ -3,8 +3,6 @@ local addon = {
 }
 -------------------------------------------------------------------------------------------------------------------------
 
-local total_craftedAbilityIds = 11
-
 -- table adapted from ScriptTracker, thanks to akamatsu02!
 local craftedAbilityScripts = {
 	[SPECIALIZED_ITEMTYPE_CRAFTED_ABILITY_SCRIPT_PRIMARY] = { -- focus
@@ -111,7 +109,7 @@ local function TooltipHook(tooltipControl, method, linkFunc)
 
 			for craftedAbilityScriptId, value in pairs(craftedAbilityScripts[specializedItemType]) do
 				if (itemId == value.bound or itemId == value.unbound) then
-					for craftedAbilityId = 1, total_craftedAbilityIds do
+					for craftedAbilityId = 1, GetNumCraftedAbilities() do
 						local description1 = GetCraftedAbilityScriptDescription(craftedAbilityId, craftedAbilityScriptId)
 						local description2 = GetCraftedAbilityScriptGeneralDescription(craftedAbilityScriptId)
 
